@@ -52,6 +52,7 @@ const (
 )
 
 const (
+	// Piece colour definitions
 	White = iota
 	Black
 	Both

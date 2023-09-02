@@ -1,1 +1,5 @@
-package gochess
+package main
+
+func main() {
+
+}
