@@ -1,5 +1,21 @@
 package defs
 
+// SUndo contains the data needed to 'undo' a chess move and go back in history
+type SUndo struct {
+	// move denotes the move made
+	move int
+	// positionKey is a unique key generated for each position
+	positionKey uint64
+	// enPassant stores the square where an enPassant move can be done (if applicable)
+	enPassant int
+	// fiftyMoveCounter is one where if for fiftyMoves(one move by each side), if no piece is captured - the game is drawn
+	fiftyMoveCounter int
+	// castlePermissions stores whether the white and black kings can castle on either sides.
+	// White(king, queen)side -> bit 1, bit 2
+	// Black(king, queen)side -> bit 3, bit 4
+	castlePermissions int
+}
+
 // SBoard denotes the board structure to be used by the engine
 type SBoard struct {
 	// pieces denotes the 120 squares (64 squares + 66 illegal squares should a piece make an out-of-bounds move)
@@ -30,11 +46,17 @@ type SBoard struct {
 	enPassant int
 	// fiftyMoveCounter is one where if for fiftyMoves(one move by each side), if no piece is captured - the game is drawn
 	fiftyMoveCounter int
+	// castlePermissions stores whether the white and black kings can castle on either sides.
+	// White(king, queen)side -> bit 1, bit 2
+	// Black(king, queen)side -> bit 3, bit 4
+	castlePermissions int
 
 	// play denotes how many half-moves are into the current search.
 	play int
 	// hisPlay denotes how many half-moves have gone on in the current game so far.
 	hisPlay int
+	// history contains the history of all the moves that were played.
+	history [MaxGameMoves]SUndo
 
 	// positionKey is a unique key generated for each position
 	positionKey uint64

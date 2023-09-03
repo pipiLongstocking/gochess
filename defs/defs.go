@@ -6,6 +6,15 @@ type u64 uint64
 const (
 	Name           = "gochess 1.0"
 	BoardSquareNum = 120
+	MaxGameMoves   = 2048
+)
+
+// Enums for castling permissions
+const (
+	WhiteKingCastle  = 1
+	WhiteQueenCastle = 2
+	BlackKingCastle  = 4
+	BlackQueenCastle = 8
 )
 
 // Enums for pieces on the board
