@@ -8,18 +8,13 @@ func FileRankTo120SquareNumber(f, r int) int {
 	return 21 + f + (10 * r)
 }
 
+// InitSq120to64 initialises the Square120to64 and Square64to120 arrays
 func InitSq120to64() {
 	sq64index := 0
 	impValue := ChessBoardSquares + 1
 	for i := 0; i < BoardSquareNum; i += 1 {
 		Square120to64[i] = impValue
 	}
-
-	/*
-		impValue = BoardSquareNum + 1
-		for i := 0; i < ChessBoardSquares; i += 1 {
-			Square64to120[i] = impValue
-	*/
 
 	for rank := Rank1; rank <= Rank8; rank += 1 {
 		for file := FileA; file <= FileH; file += 1 {
