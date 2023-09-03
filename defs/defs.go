@@ -4,9 +4,10 @@ type u64 uint64
 
 // Basic board/engine metadata
 const (
-	Name           = "gochess 1.0"
-	BoardSquareNum = 120
-	MaxGameMoves   = 2048
+	Name              = "gochess 1.0"
+	BoardSquareNum    = 120
+	MaxGameMoves      = 2048
+	ChessBoardSquares = 64
 )
 
 // Enums for castling permissions
@@ -49,14 +50,14 @@ const (
 
 // Enums for ranks on the board
 const (
-	RankA = iota
-	RankB
-	RankC
-	RankD
-	RankE
-	RankF
-	RankG
-	RankH
+	Rank1 = iota
+	Rank2
+	Rank3
+	Rank4
+	Rank5
+	Rank6
+	Rank7
+	Rank8
 	RankNone
 )
 

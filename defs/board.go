@@ -61,3 +61,10 @@ type SBoard struct {
 	// positionKey is a unique key generated for each position
 	positionKey uint64
 }
+
+var (
+	// Square120to64 is an auxiliary array used to interchange indices from the 120-square board with outlier squares to a standard 64-square board (0-indexed)
+	Square120to64 [BoardSquareNum]int
+	// Square64to120 is an auxiliary array used to interchange indices from a 0-indexed 64-square board to a 120-square board with outlier squares
+	Square64to120 [ChessBoardSquares]int
+)
